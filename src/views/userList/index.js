@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { getUsersList } from "../services/user.service";
-import Pagination from '../common/pagination';
-import DataTable from "../common/DataTable";
-import Search from "../common/Search";
+import { getUsersList } from "../../services/user.service";
+import Pagination from '../../common/pagination';
+import DataTable from "../../common/DataTable";
+import Search from "../../common/Search";
+import "./index.scss";
 
 export default class UserList extends Component {
     state = {
@@ -21,7 +22,7 @@ export default class UserList extends Component {
     
     render() {
         const { userList  } = this.state;
-        return <div>
+        return <div className={"container"}>
             <Search submitHandler={this.submitHandler}/>
             <DataTable data={userList}/>
             <Pagination dataLength={userList.length} initialPage={1} pageSize={10}/>

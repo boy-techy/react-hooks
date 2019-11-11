@@ -1,0 +1,19 @@
+.user-detail {
+
+  .detail-card {
+    width: 600px;
+    border: 1px solid #d0d3d4;
+    border-radius: 2% 1% 17%;
+    box-shadow: 4px 7px 20px 0px #b8bdbaed;
+    padding: 15px;
+    margin: 20px auto 0 auto;
+
+    .label {
+      width: 200px;
+    }
+    tr {
+      padding: 10px;
+      display: flex;
+    }
+  }
+}

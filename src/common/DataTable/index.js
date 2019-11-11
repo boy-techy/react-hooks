@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import "./index.scss";
 
 export default class DataTable extends Component {
     
     render() {
         const { data } = this.props;
-        return <table>
+        return <table className={"data-table"}>
             <thead>
             <tr>
                 <th>Name</th>
@@ -29,8 +30,8 @@ export default class DataTable extends Component {
                         <td>{user.city}</td>
                         <td>{user.state}</td>
                         <td>{user.zip}</td>
-                        <td>{user.email}</td>
-                        <td>{user.web}</td>
+                        <td><a href={`mailto:${user.email}`}>{user.email}</a></td>
+                        <td><a href={user.web}>{user.web}</a></td>
                         <td>{user.age}</td>
                     </tr>
                 })

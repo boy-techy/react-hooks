@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import UserList from "./views/UserList";
-import UserDetail from "./views/UserDetail";
+import UserList from "./views/userList";
+import UserDetail from "./views/userDetail";
 
 
 export default class App extends Component {
