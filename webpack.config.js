@@ -11,7 +11,12 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: { loader: "babel-loader" }
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    }
+                }
             },
             {
                 test: /\.css$/,
@@ -54,10 +59,12 @@ module.exports = {
         })
     ],
     devServer: {
-        host: 'localhost',
         port: '3000',
         contentBase: './dist',
         hot: true,
+        historyApiFallback: true,
+        compress: true,
+        publicPath: '/',
     },
     output: {
         filename: '[name].[hash].js',
