@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const GET = url => {
-    return axios.get();
+    return axios.get(url);
 };
 
 
