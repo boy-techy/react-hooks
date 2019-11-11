@@ -1,10 +1,13 @@
 import React from 'react';
+import NavBar from "../common/navBar";
 
 
-export default () => {
-    
+export default ({ location, history }) => {
+    if (!location.state) {
+        history.push("/");
+    }
     return <div>
-        UserDetail Page
+        <NavBar back={true}/>
     </div>
     
 };
