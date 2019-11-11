@@ -2,12 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  justify-content: space-between;
 
   .page-number {
+    flex: 1;
     padding: 5px;
     border: 1px solid;
     margin: 5px 0;
     cursor: pointer;
+    text-align: center;
   }
   .selected {
     background-color: #d0d3d4;
