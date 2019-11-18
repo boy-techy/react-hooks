@@ -13,6 +13,7 @@ export default class App extends Component {
                   <Route path="/user/:id" component={UserDetail}/>
                   <Route path="/users" component={UserList}/>
                   <Route exact path="/" render={props => <Redirect {...props} to="/users" />}/>
+                  <Route path="*" component={() => <div>No Page Found</div>}/>
               </Switch>
           </BrowserRouter>
         )

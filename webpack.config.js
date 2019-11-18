@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WebpackManifest = require('webpack-manifest-plugin');
 
 
 module.exports = {
@@ -36,12 +37,12 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader'],
+            },
+            {
                 test: /\.html$/,
-                use: [
-                    {
-                        loader: "html-loader"
-                    }
-                ]
+                use: ["html-loader"]
             }
         ]
     },
@@ -53,6 +54,10 @@ module.exports = {
     devtool: 'inline-source-map',
     plugins: [
         new CleanWebpackPlugin(),
+        new WebpackManifest({
+            fileName: 'manifest.json',
+            writeToFileEmit: true
+        }),
         new HtmlWebPackPlugin({
             template: './index.html',
             filename: './index.html'
@@ -60,11 +65,13 @@ module.exports = {
     ],
     devServer: {
         port: '3000',
-        contentBase: './dist',
-        hot: true,
+        contentBase: [path.resolve(__dirname, 'dist'),path.resolve(__dirname, 'assets')], //static files path
         historyApiFallback: true,
+        watchContentBase: true,
         compress: true,
-        publicPath: '/',
+        publicPath: '/', // To serve bundles from
+        injectClient: true, // for HMR injection
+        injectHot: true, // for HMR injection
     },
     output: {
         filename: '[name].[hash].js',
