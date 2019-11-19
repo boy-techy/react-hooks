@@ -48,11 +48,11 @@ export default class UserList extends Component {
     
     render() {
         const { PAGE_SIZE } = this.context;
-        const { filteredUsers, pages } = this.state;
+        const { filteredUsers, pages, searchFlag } = this.state;
         return <div className={"container"}>
             <Search submitHandler={this.submitHandler}/>
             <DataTable data={filteredUsers}/>
-            <Pagination updateCurrentPage={this.updateCurrentPage}
+            <Pagination key={searchFlag} updateCurrentPage={this.updateCurrentPage}
                         dataLength={pages} initialPage={1} pageSize={PAGE_SIZE}/>
         </div>
     }

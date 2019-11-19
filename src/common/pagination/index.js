@@ -3,7 +3,7 @@ import { getTotalPage } from "./selector";
 import "./index.scss";
 
 
-export default (props) => {
+const Pagination = (props) => {
     const [currentPage, updatePage] = useState(props.initialPage);
     const [totalPages, updateTotalPages] = useState(props.dataLength);
     
@@ -16,14 +16,15 @@ export default (props) => {
     for (let i = 1; i <= totalPages; i++) {
         pages.push(<li className={`page-number ${currentPage === i ? 'selected' : ''}`}
                        key={i} onClick={() => {
-                           updatePage(i);
-                           props.updateCurrentPage(i);
-                       }}>{i}</li>)
+            updatePage(i);
+            props.updateCurrentPage(i);
+        }}>{i}</li>)
     }
     
     
     return (
       <ul className={"pagination-container"}>{pages}</ul>
     )
-    
-}
+};
+
+export default Pagination;
