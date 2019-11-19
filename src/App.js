@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import UserList from "./views/userList";
-import UserDetail from "./views/userDetail";
-
+import User from "./views/user";
 
 export default class App extends Component {
     
@@ -10,9 +8,8 @@ export default class App extends Component {
         return (
           <BrowserRouter>
               <Switch>
-                  <Route path="/user/:id" component={UserDetail}/>
-                  <Route path="/users" component={UserList}/>
-                  <Route exact path="/" render={props => <Redirect {...props} to="/users" />}/>
+                  <Route path="/user" component={User}/>
+                  <Route exact path="/" render={props => <Redirect {...props} to="/user"/>}/>
                   <Route path="*" component={() => <div>No Page Found</div>}/>
               </Switch>
           </BrowserRouter>

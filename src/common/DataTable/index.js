@@ -4,6 +4,7 @@ import "./index.scss";
 
 export default class DataTable extends Component {
     
+    
     render() {
         const { data } = this.props;
         return <table className={"data-table"}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from "../../common/navBar";
+import NavBar from "../../../common/navBar";
 import { KeyMap, TagType } from "./constants";
 import "./index.scss";
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./index.scss";
 /**
  * Search Component to filter data from list
@@ -8,6 +8,11 @@ import "./index.scss";
 export default ({ submitHandler }) => {
     const [ searchValue, setSearch ] = useState('');
     const [lastSearchValue, setLastSearchValue] = useState('');
+    
+    /*useEffect(() => {
+    
+    }, [searchValue]);*/
+    
     return (
       <form className="search-form" onSubmit={e => {
           e.preventDefault();
