@@ -4,7 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "start": "webpack-dev-server --open",
     "analyse": "webpack --profile --json > webpack-stats.json"
   },
@@ -21,6 +22,9 @@
     "url": "https://github.com/boy-techy/react-hooks/issues"
   },
   "homepage": "https://github.com/boy-techy/react-hooks#readme",
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>setupEnzyme.js"
+  },
   "dependencies": {
     "@babel/runtime": "^7.7.2",
     "@hot-loader/react-dom": "^16.11.0",
@@ -40,10 +44,17 @@
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
     "html-loader": "^0.5.5",
+    "jest": "^24.9.0",
+    "jest-transform-stub": "^2.0.0",
     "node-sass": "^4.13.0",
+    "react-test-renderer": "^16.12.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack-manifest-plugin": "^2.2.0"

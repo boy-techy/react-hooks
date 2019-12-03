@@ -19,7 +19,11 @@ export default class User extends Component {
     async componentDidMount() {
         this.setState({ loading: true });
         const userList = await getUsersList();
-        this.setState(currentState => ({ userList, updateVersion: currentState + 1, loading: false }));
+        this.setState(currentState => ({
+            userList,
+            updateVersion: currentState.updateVersion + 1,
+            loading: false
+        }));
     }
     
     render() {
