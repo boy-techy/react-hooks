@@ -22,9 +22,6 @@
     "url": "https://github.com/boy-techy/react-hooks/issues"
   },
   "homepage": "https://github.com/boy-techy/react-hooks#readme",
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>setupEnzyme.js"
-  },
   "dependencies": {
     "@babel/runtime": "^7.7.2",
     "@hot-loader/react-dom": "^16.11.0",
@@ -54,6 +51,7 @@
     "jest": "^24.9.0",
     "jest-transform-stub": "^2.0.0",
     "node-sass": "^4.13.0",
+    "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",

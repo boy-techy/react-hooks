@@ -1,24 +1,15 @@
 // Link.react.test.js
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
+import { mount } from 'enzyme';
 import User from "./index"
-import renderer from 'react-test-renderer';
 
-test('Link changes the class when hovered', () => {
-    const component = renderer.create(
-      <User page="http://www.facebook.com">Facebook</User>,
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+test('No page Found Render', () => {
+    /*const wrapper = mount(
+      <MemoryRouter initialEntries={['/random']}>
+          <User/>
+      </MemoryRouter>
+    , {match:{path: ''}});
     
-    // manually trigger the callback
-    tree.props.onMouseEnter();
-    // re-rendering
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    
-    // manually trigger the callback
-    tree.props.onMouseLeave();
-    // re-rendering
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(wrapper.find(<div>No Page Found</div>)).toHaveLength(1);*/
 });
