@@ -5,6 +5,7 @@ import UserList from "./userList";
 import { getUsersList } from "../../services/user.service";
 import { UserContext } from "../../contexts/userContext";
 import { Loader } from "../../common/Loader";
+import PageNotFound from "../../PageNotFound";
 
 //configurable page size
 const PAGE_SIZE = 20;
@@ -35,7 +36,7 @@ export default class User extends Component {
               <Switch>
                   <Route path={`${match.path}/:id`} component={UserDetail}/>
                   <Route path={`${match.path}/`} component={UserList}/>
-                  <Route path="*" component={() => <div>No Page Found</div>}/>
+                  <Route path="*" component={PageNotFound}/>
               </Switch>
           </UserContext.Provider>
         )

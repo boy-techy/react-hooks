@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import User from "./views/user";
+import PageNotFound from "./PageNotFound";
 
 export default class App extends Component {
     
@@ -10,7 +11,7 @@ export default class App extends Component {
               <Switch>
                   <Route path="/user" component={User}/>
                   <Route exact path="/" render={props => <Redirect {...props} to="/user"/>}/>
-                  <Route path="*" component={() => <div>No Page Found</div>}/>
+                  <Route path="*" component={PageNotFound}/>
               </Switch>
           </BrowserRouter>
         )

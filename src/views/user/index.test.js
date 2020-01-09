@@ -1,15 +1,34 @@
 // Link.react.test.js
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from '../../__mocks__/react-router-dom';
 import { mount } from 'enzyme';
 import User from "./index"
+import UserList from "./userList";
+import UserDetail from './userDetail';
 
-test('No page Found Render', () => {
-    /*const wrapper = mount(
-      <MemoryRouter initialEntries={['/random']}>
-          <User/>
-      </MemoryRouter>
-    , {match:{path: ''}});
+
+describe('View user', () => {
     
-    expect(wrapper.find(<div>No Page Found</div>)).toHaveLength(1);*/
+    describe('Routing in User Page', () => {
+        it('UserList Page Rendering', () => {
+            const wrapper = mount(
+              <MemoryRouter initialEntries={['/user']}>
+                  <User {...{match: { path: '/user' }}}/>
+              </MemoryRouter>
+            );
+            
+            expect(wrapper.find(UserList)).toHaveLength(1);
+        });
+        
+        it('UserDetail Page Rendering', () => {
+            const wrapper = mount(
+              <MemoryRouter initialEntries={['/user/1']}>
+                  <User {...{ match: { path: '/user', params: { id: 1 }}}}/>
+              </MemoryRouter>
+            );
+        
+            expect(wrapper.find(UserDetail)).toHaveLength(1); //Need To Check
+        });
+    });
+    
 });
